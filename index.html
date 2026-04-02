@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Urban Threads — Streetwear for the Bold</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+
+    <style></style>
+  </head>
+  <body>
+    <!-- ═══ NAVBAR ═══════════════════════════════ -->
+    <nav>
+      <a href="index.html" class="nav-logo">URBAN<span>.</span>THREADS</a>
+      <div class="nav-links">
+        <a href="shop.html">Shop</a>
+        <a href="cart.html"
+          >Cart
+          <span
+            id="nav-cart-count"
+            style="color: var(--orange); font-weight: 600"
+          ></span
+        ></a>
+        <span id="nav-user-info"></span>
+        <button id="nav-logout-btn" style="display: none">Logout</button>
+        <a href="login.html" id="nav-login-link" class="nav-cta">Sign In</a>
+      </div>
+    </nav>
+
+    <!-- ═══ HERO ══════════════════════════════════ -->
+    <section class="hero">
+      <div class="hero-left">
+        <p class="hero-eyebrow">New Collection 2025</p>
+        <h1 class="hero-h1">
+          WEAR THE
+          <span class="accent">STREET.</span>
+        </h1>
+        <p class="hero-desc">
+          Bold cuts, raw textures, unapologetic style. Urban Threads is
+          streetwear built for those who move to their own rhythm.
+        </p>
+        <div class="hero-actions">
+          <a href="shop.html" class="btn-primary">Shop Now</a>
+          <a href="shop.html?category=Hoodies" class="btn-outline"
+            >New Arrivals</a
+          >
+        </div>
+      </div>
+      <div class="hero-right">
+        <img
+          class="hero-img"
+          src="resources/hero-img.jpg"
+          alt="Urban fashion model"
+        />
+        <div class="hero-badge">
+          <span class="hero-badge-inner">30%</span>
+          <span class="hero-badge-label">OFF SALE</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ MARQUEE ════════════════════════════════ -->
+    <div class="marquee-strip">
+      <div class="marquee-track" id="marquee-track"></div>
+    </div>
+
+    <!-- ═══ CATEGORIES ════════════════════════════ -->
+    <section class="section reveal" id="categories">
+      <div class="section-header">
+        <h2 class="section-title">SHOP BY <span>CATEGORY</span></h2>
+        <a href="shop.html" class="section-link">View All →</a>
+      </div>
+      <div class="cat-grid">
+        <a href="shop.html?category=Hoodies" class="cat-card">
+          <img
+            class="cat-img"
+            src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80"
+            alt="Hoodies"
+          />
+          <div class="cat-overlay">
+            <p class="cat-name">HOODIES</p>
+            <p class="cat-count">3 Styles</p>
+          </div>
+          <div class="cat-arrow">→</div>
+        </a>
+        <a href="shop.html?category=T-Shirts" class="cat-card">
+          <img
+            class="cat-img"
+            src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80"
+            alt="T-Shirts"
+          />
+          <div class="cat-overlay">
+            <p class="cat-name">T-SHIRTS</p>
+            <p class="cat-count">3 Styles</p>
+          </div>
+          <div class="cat-arrow">→</div>
+        </a>
+        <a href="shop.html?category=Sneakers" class="cat-card">
+          <img
+            class="cat-img"
+            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80"
+            alt="Sneakers"
+          />
+          <div class="cat-overlay">
+            <p class="cat-name">SNEAKERS</p>
+            <p class="cat-count">3 Styles</p>
+          </div>
+          <div class="cat-arrow">→</div>
+        </a>
+        <a href="shop.html?category=Accessories" class="cat-card">
+          <img
+            class="cat-img"
+            src="https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=600&q=80"
+            alt="Accessories"
+          />
+          <div class="cat-overlay">
+            <p class="cat-name">ACCESSORIES</p>
+            <p class="cat-count">3 Styles</p>
+          </div>
+          <div class="cat-arrow">→</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ═══ FEATURES BAR ═══════════════════════════ -->
+    <div class="features-bar reveal">
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">🚚</div>
+          <div>
+            <p class="feature-title">FREE SHIPPING</p>
+            <p class="feature-desc">On all orders over $75</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">↩</div>
+          <div>
+            <p class="feature-title">EASY RETURNS</p>
+            <p class="feature-desc">30-day free returns</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🔒</div>
+          <div>
+            <p class="feature-title">SECURE PAYMENT</p>
+            <p class="feature-desc">256-bit SSL encryption</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">💬</div>
+          <div>
+            <p class="feature-title">24/7 SUPPORT</p>
+            <p class="feature-desc">Real humans, real help</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PROMO BAND ════════════════════════════ -->
+    <div class="promo-band reveal">
+      <div>
+        <p class="promo-eyebrow">Limited Time Offer</p>
+        <h3 class="promo-title">30% OFF<br />EVERYTHING IN THE SALE</h3>
+      </div>
+      <a href="shop.html" class="promo-btn">GRAB THE DEAL</a>
+    </div>
+
+    <!-- ═══ FOOTER ════════════════════════════════ -->
+    <footer>
+      <div class="footer-top">
+        <div>
+          <p class="footer-brand-name">URBAN<span>.</span>THREADS</p>
+          <p class="footer-tagline">
+            Streetwear for the bold. Designed on the streets, built for everyday
+            life.
+          </p>
+        </div>
+        <div>
+          <p class="footer-col-title">Shop</p>
+          <div class="footer-links">
+            <a href="shop.html?category=Hoodies">Hoodies</a>
+            <a href="shop.html?category=T-Shirts">T-Shirts</a>
+            <a href="shop.html?category=Sneakers">Sneakers</a>
+            <a href="shop.html?category=Accessories">Accessories</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-col-title">Account</p>
+          <div class="footer-links">
+            <a href="login.html">Sign In</a>
+            <a href="login.html">Create Account</a>
+            <a href="cart.html">My Cart</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-col-title">Info</p>
+          <div class="footer-links">
+            <a href="#">About Us</a>
+            <a href="#">Sizing Guide</a>
+            <a href="#">Shipping Info</a>
+            <a href="#">Returns</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © 2025 Urban Threads. All rights reserved. — A student project.
+        </p>
+        <p class="footer-copy">Built with Firebase & Vanilla JS</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
