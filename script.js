@@ -54,7 +54,7 @@ const words = [
   "·",
   "NEW ARRIVALS",
   "·",
-  "FREE SHIPPING OVER $75",
+  "FREE SHIPPING OVER R1,388",
   "·",
 ];
 const track = document.getElementById("marquee-track");
@@ -346,7 +346,7 @@ function renderCart(user) {
                 />
                 <div>
                   <p class="cart-item-name">${item.name}</p>
-                  <p class="cart-item-price">$${Number(item.price).toFixed(2)} each</p>
+                  <p class="cart-item-price">R${Number(item.price).toFixed(2)} each</p>
                   <div class="qty-control">
                     <button class="qty-btn" onclick="changeQty('${item.id}', -1)">−</button>
                     <span class="qty-display" id="qty-${item.id}">${item.qty}</span>
@@ -355,7 +355,7 @@ function renderCart(user) {
                   <button class="remove-btn" onclick="removeItem('${item.id}')">✕ Remove</button>
                 </div>
                 <div>
-                  <span class="cart-item-total" id="total-${item.id}">$${(item.price * item.qty).toFixed(2)}</span>
+                  <span class="cart-item-total" id="total-${item.id}">R${(item.price * item.qty).toFixed(2)}</span>
                 </div>
               </div>
             `,
@@ -370,7 +370,7 @@ function renderCart(user) {
           <div class="summary-lines">
             <div class="summary-line">
               <span class="summary-label">Subtotal</span>
-              <span class="summary-value" id="summary-sub">$${subtotal.toFixed(2)}</span>
+              <span class="summary-value" id="summary-sub">R${subtotal.toFixed(2)}</span>
             </div>
             <div class="summary-line">
               <span class="summary-label">Shipping</span>
@@ -378,15 +378,15 @@ function renderCart(user) {
             </div>
             <div class="summary-line">
               <span class="summary-label">VAT (15%)</span>
-              <span class="summary-value" id="summary-tax">$${tax.toFixed(2)}</span>
+              <span class="summary-value" id="summary-tax">R${tax.toFixed(2)}</span>
             </div>
           </div>
           <div class="summary-divider"></div>
           <div class="summary-total-line">
             <span class="summary-total-label">TOTAL</span>
-            <span class="summary-total-value" id="summary-total">$${total.toFixed(2)}</span>
+            <span class="summary-total-value" id="summary-total">R${total.toFixed(2)}</span>
           </div>
-          ${shipping > 0 ? `<p style="font-size:.75rem;color:rgba(245,240,235,.35);margin-top:8px;letter-spacing:.04em;">Add $${(75 - subtotal).toFixed(2)} more for free shipping</p>` : ""}
+          ${shipping > 0 ? `<p style="font-size:.75rem;color:rgba(245,240,235,.35);margin-top:8px;letter-spacing:.04em;">Add R${(1388 - subtotal).toFixed(2)} more for free shipping</p>` : ""}
 
           <div class="promo-wrap">
             <input type="text" class="promo-input" placeholder="PROMO CODE" id="promo-input" />
@@ -412,7 +412,7 @@ function changeQty(id, delta) {
   const qtyEl = document.getElementById(`qty-${id}`);
   const totalEl = document.getElementById(`total-${id}`);
   if (qtyEl) qtyEl.textContent = item.qty;
-  if (totalEl) totalEl.textContent = `$${(item.price * item.qty).toFixed(2)}`;
+  if (totalEl) totalEl.textContent = `R${(item.price * item.qty).toFixed(2)}`;
   updateSummary();
   updateNavCount();
 }
@@ -444,11 +444,11 @@ function updateSummary() {
   const taxEl = document.getElementById("summary-tax");
   const totEl = document.getElementById("summary-total");
   const countEl = document.getElementById("cart-item-count");
-  if (subEl) subEl.textContent = `$${subtotal.toFixed(2)}`;
+  if (subEl) subEl.textContent = `R${subtotal.toFixed(2)}`;
   if (shipEl)
-    shipEl.textContent = shipping === 0 ? "FREE" : `$${shipping.toFixed(2)}`;
-  if (taxEl) taxEl.textContent = `$${tax.toFixed(2)}`;
-  if (totEl) totEl.textContent = `$${total.toFixed(2)}`;
+    shipEl.textContent = shipping === 0 ? "FREE" : `R${shipping.toFixed(2)}`;
+  if (taxEl) taxEl.textContent = `R${tax.toFixed(2)}`;
+  if (totEl) totEl.textContent = `R${total.toFixed(2)}`;
   if (countEl)
     countEl.textContent = `${itemCount} item${itemCount !== 1 ? "s" : ""}`;
 }
@@ -594,7 +594,7 @@ function renderProducts(products) {
           <p class="product-name">${p.name}</p>
           <p class="product-desc">${p.description || ""}</p>
           <div class="product-footer">
-            <span class="product-price">$${Number(p.price).toFixed(2)}</span>
+            <span class="product-price">R${Number(p.price).toFixed(2)}</span>
             <button class="add-to-cart-btn" onclick="addToCart('${p.id}', this)">ADD TO CART</button>
           </div>
         </div>

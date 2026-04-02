@@ -29,7 +29,7 @@ async function seedProducts() {
   const products = [
     {
       name: "Oversized Hoodie",
-      price: 49.99,
+      price: 925,
       category: "Hoodies",
       description:
         "Heavyweight 400gsm cotton hoodie in a relaxed oversized fit. Perfect for layering.",
@@ -39,7 +39,7 @@ async function seedProducts() {
     },
     {
       name: "Acid Wash Hoodie",
-      price: 54.99,
+      price: 1017,
       category: "Hoodies",
       description:
         "Vintage acid-wash treatment on premium fleece. One-of-a-kind look every time.",
@@ -49,7 +49,7 @@ async function seedProducts() {
     },
     {
       name: "Zip-Up Hoodie",
-      price: 59.99,
+      price: 1110,
       category: "Hoodies",
       description:
         "Classic zip-up with kangaroo pockets. Brushed interior for all-day comfort.",
@@ -60,7 +60,7 @@ async function seedProducts() {
 
     {
       name: "Drop Shoulder Tee",
-      price: 29.99,
+      price: 555,
       category: "T-Shirts",
       description:
         "Ultra-soft 200gsm jersey with a drop-shoulder cut. Streetwear staple.",
@@ -70,7 +70,7 @@ async function seedProducts() {
     },
     {
       name: "Graphic Print Tee",
-      price: 34.99,
+      price: 647,
       category: "T-Shirts",
       description:
         "Bold graphic on heavyweight cotton. Screen-printed with water-based inks.",
@@ -80,7 +80,7 @@ async function seedProducts() {
     },
     {
       name: "Washed Pocket Tee",
-      price: 27.99,
+      price: 518,
       category: "T-Shirts",
       description: "Garment-washed for a broken-in feel. Chest pocket detail.",
       imageURL:
@@ -90,7 +90,7 @@ async function seedProducts() {
 
     {
       name: "Chunky Runners",
-      price: 89.99,
+      price: 1665,
       category: "Sneakers",
       description:
         "Exaggerated sole runner with mesh upper. Inspired by 2000s trail shoes.",
@@ -100,7 +100,7 @@ async function seedProducts() {
     },
     {
       name: "Low-Top Canvas",
-      price: 64.99,
+      price: 1202,
       category: "Sneakers",
       description:
         "Clean canvas low-top. Vulcanised sole. The perfect blank canvas.",
@@ -110,7 +110,7 @@ async function seedProducts() {
     },
     {
       name: "High-Top Leather",
-      price: 109.99,
+      price: 2035,
       category: "Sneakers",
       description:
         "Premium leather high-top with padded collar and ankle strap.",
@@ -121,7 +121,7 @@ async function seedProducts() {
 
     {
       name: "Beanie — Ribbed Knit",
-      price: 19.99,
+      price: 370,
       category: "Accessories",
       description:
         "Fine-gauge ribbed knit beanie. One size fits all. 100% acrylic.",
@@ -131,7 +131,7 @@ async function seedProducts() {
     },
     {
       name: "Crossbody Bag",
-      price: 39.99,
+      price: 740,
       category: "Accessories",
       description:
         "Compact crossbody in waxed canvas. Adjustable strap, YKK zippers.",
@@ -141,7 +141,7 @@ async function seedProducts() {
     },
     {
       name: "5-Panel Cap",
-      price: 24.99,
+      price: 462,
       category: "Accessories",
       description:
         "Structured 5-panel with embroidered logo. Adjustable snapback.",
