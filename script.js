@@ -84,7 +84,14 @@ revealEls.forEach((el) => io.observe(el));
 // LOGIN PAGE
 // ── Redirect if already logged in ──
 auth.onAuthStateChanged((user) => {
-  if (user && window.location.pathname.includes("login.html")) {
+  const currentPage =
+    window.location.pathname.split("/").pop() || window.location.pathname;
+  if (
+    user &&
+    (currentPage === "login.html" ||
+      currentPage === "" ||
+      currentPage.indexOf("login") !== -1)
+  ) {
     window.location.href = "shop.html";
   }
 });
